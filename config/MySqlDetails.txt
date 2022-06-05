@@ -1,0 +1,39 @@
+host : sql6.freemysqlhosting.net
+port : 3306
+Username : sql6484484
+Passwrd : 2xKnn2qSgs
+Schema : sql6484484
+
+
+create table capture_user_details(
+   user_id INT NOT NULL AUTO_INCREMENT,
+   user_email_id VARCHAR(100) NOT NULL,
+   user_mac_address VARCHAR(100) NOT NULL,
+   user_url_hit_count INT,
+   PRIMARY KEY ( user_id )
+);
+alter table capture_user_details add user_logedIN_time timestamp;
+alter table capture_user_details add user_status VARCHAR(100);
+alter table capture_user_details add urls_data TEXT;
+
+
+create table user_activity_details(
+   user_id INT,
+   user_email_id VARCHAR(100) NOT NULL,
+   user_total_login INT NOT NULL,
+   user_total_url_access INT NOT NULL,
+   PRIMARY KEY ( user_id )
+);
+
+
+create table user_suggestions(
+   user_id INT,
+   user_suggestion VARCHAR(100000) NOT NULL,
+   PRIMARY KEY ( user_id )
+);
+
+
+INSERT INTO capture_user_details VALUES (3456,'test@h.com','mac Add',8)
+
+INSERT INTO capture_user_details (user_email_id, user_mac_address, user_url_hit_count,user_logedIN_time)
+ VALUES ('test2@h.com','mac add96',5,now())
